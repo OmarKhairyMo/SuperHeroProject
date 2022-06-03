@@ -1,3 +1,8 @@
+import {API_KEY, BASE_URL} from './constants';
+
 export const getMovieListByTitle = name => {
-  return `http://www.omdbapi.com/?s=${name.toLowerCase()}&page=1&apikey=8971d9f8`;
+  return `${BASE_URL}/?s=${name.toLowerCase()}&page=1&apikey=${API_KEY}`;
+};
+export const getMovieListBySearch = searchTerm => {
+  return `${BASE_URL}/?t=${searchTerm.toLowerCase()}&apikey=${API_KEY}`;
 };

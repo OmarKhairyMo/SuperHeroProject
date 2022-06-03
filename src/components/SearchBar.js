@@ -4,11 +4,12 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import {appColors} from '../utils/theme/colors';
 
 const {height} = Dimensions.get('window');
-const SearchBar = ({value}) => {
+const SearchBar = ({value, onChangeText}) => {
   return (
     <View style={styles.textContainer}>
       <TextInput
         placeholder="Search"
+        onChangeText={onChangeText}
         value={value}
         style={styles.textInputStyle}
       />
