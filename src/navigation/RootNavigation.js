@@ -1,7 +1,8 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {useMemo} from 'react';
+import {useMemo, useState} from 'react';
 import {Image} from 'react-native';
+import {Loader} from '../components/Loader';
 import Details from '../screens/Details';
 import Hero from '../screens/Hero';
 import RandomMovies from '../screens/RandomMovies';
@@ -21,7 +22,13 @@ const rootScreenOptions = {
 };
 
 const RootNavigator = () => {
+  const [isLoading] = useState(false);
+
   const screens = useMemo(() => {
+    if (isLoading) {
+      return <Stack.Screen component={Loader} name={NavigationKey.Loading} />;
+    }
+
     return (
       <>
         <Stack.Screen
@@ -37,7 +44,7 @@ const RootNavigator = () => {
         <Stack.Screen name={NavigationKey.Details} component={Details} />
       </>
     );
-  }, []);
+  }, [isLoading]);
 
   return (
     <Stack.Navigator screenOptions={rootScreenOptions}>

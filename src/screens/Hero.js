@@ -70,7 +70,8 @@ const Hero = ({navigation}) => {
               <TouchableOpacity
                 onPress={() =>
                   navigation.navigate(NavigationKey.RandomMovies, {
-                    currentObject: item,
+                    heroName: item.title,
+                    heroPoster: item.poster,
                   })
                 }
                 style={{

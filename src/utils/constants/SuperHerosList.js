@@ -17,15 +17,8 @@ export const SUPER_HEROS_LIST = [
   },
 
   {
-    id: '6',
-    title: 'Hawkeye',
-    backdrop: 'https://wallpaperaccess.com/full/1534120.jpg',
-    poster: 'https://i.ebayimg.com/images/g/gv4AAOSwcfNcrhGa/s-l400.jpg',
-  },
-
-  {
     id: '2',
-    title: 'Captian America',
+    title: 'Captain America',
     backdrop: 'https://wallpaperaccess.com/full/3687269.jpg',
     poster:
       'https://i.etsystatic.com/15963200/r/il/584fd3/1893128427/il_fullxfull.1893128427_kexc.jpg',
@@ -33,6 +26,7 @@ export const SUPER_HEROS_LIST = [
   {
     id: '5',
     title: 'Black Widow',
+    poster: 'https://i.ebayimg.com/images/g/haoAAOSwG8ZcrhON/s-l300.jpg',
   },
   {
     id: '1',
@@ -42,6 +36,11 @@ export const SUPER_HEROS_LIST = [
     poster:
       'https://i.pinimg.com/originals/c8/68/5e/c8685e46c6b2aa9cd9603e3307b07592.jpg',
   },
-
+  {
+    id: '6',
+    title: 'Hawkeye',
+    backdrop: 'https://wallpaperaccess.com/full/1534120.jpg',
+    poster: 'https://i.ebayimg.com/images/g/gv4AAOSwcfNcrhGa/s-l400.jpg',
+  },
   {key: 'right-spacer'},
 ];
