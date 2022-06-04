@@ -6,3 +6,6 @@ export const getMovieListByTitle = name => {
 export const getMovieListBySearch = searchTerm => {
   return `${BASE_URL}/?t=${searchTerm.toLowerCase()}&apikey=${API_KEY}`;
 };
+export const getSingleMovie = movieId => {
+  return `${BASE_URL}/?i=${movieId}&apikey=${API_KEY}`;
+};

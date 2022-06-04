@@ -12,13 +12,14 @@ import {
 import {getMovieListBySearch, getMovieListByTitle} from '../api/helpers';
 import {Loader} from '../components/Loader';
 import SearchBar from '../components/SearchBar';
+import {NavigationKey} from '../navigation/NavigationKey';
 import {appColors} from '../utils/theme/colors';
 
 const SEARCH_DEBOUNCE_DURATION = 600; //ms
 
 const {height, width} = Dimensions.get('window');
 
-const RandomMovies = ({route}) => {
+const RandomMovies = ({route, navigation}) => {
   const {heroName, heroPoster} = route.params;
   const [movieList, setMovieList] = useState([]);
   const [term, setTerm] = useState('');
@@ -111,6 +112,11 @@ const RandomMovies = ({route}) => {
             showsVerticalScrollIndicator={false}
             renderItem={({item, index}) => (
               <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate(NavigationKey.Details, {
+                    movieID: item.imdbID,
+                  })
+                }
                 style={{
                   width: width / 2.3,
                   marginHorizontal: 10,

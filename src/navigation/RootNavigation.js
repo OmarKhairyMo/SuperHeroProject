@@ -41,7 +41,11 @@ const RootNavigator = () => {
           name={NavigationKey.RandomMovies}
           component={RandomMovies}
         />
-        <Stack.Screen name={NavigationKey.Details} component={Details} />
+        <Stack.Screen
+          options={{headerShown: false}}
+          name={NavigationKey.Details}
+          component={Details}
+        />
       </>
     );
   }, [isLoading]);
