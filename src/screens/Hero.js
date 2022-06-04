@@ -98,7 +98,7 @@ const Hero = ({navigation}) => {
           );
         }}
       />
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={{
           justifyContent: 'center',
           alignItems: 'center',
@@ -110,7 +110,7 @@ const Hero = ({navigation}) => {
           borderRadius: 8,
         }}>
         <Text style={{color: 'white'}}>Random Hero</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 };

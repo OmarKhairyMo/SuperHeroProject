@@ -8,17 +8,24 @@ import {appColors} from '../utils/theme/colors';
 const SPACING = 15;
 
 const Details = ({route}) => {
-  const {movieID} = route.params;
+  const {movieID, movieList} = route.params;
   const [currentMovie, setCurrentMovie] = useState({});
+
+  const fetchSingleMovie = async id => {
+    try {
+      const data = await axios.get(getSingleMovie(id));
+      setCurrentMovie(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  console.log(currentMovie);
+  const handleRandomMovie = () => {
+    let rand = movieList[(Math.random() * movieList?.length) | 0];
+    fetchSingleMovie(rand.imdbID);
+  };
   useEffect(() => {
-    (async () => {
-      try {
-        const data = await axios.get(getSingleMovie(movieID));
-        setCurrentMovie(data.data);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
+    fetchSingleMovie(movieID);
   }, [movieID]);
 
   return (
@@ -64,6 +71,7 @@ const Details = ({route}) => {
         </View>
 
         <TouchableOpacity
+          onPress={() => handleRandomMovie()}
           style={{
             height: 60,
             width: 60,

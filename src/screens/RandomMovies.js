@@ -115,6 +115,7 @@ const RandomMovies = ({route, navigation}) => {
                 onPress={() =>
                   navigation.navigate(NavigationKey.Details, {
                     movieID: item.imdbID,
+                    movieList: movieList,
                   })
                 }
                 style={{
